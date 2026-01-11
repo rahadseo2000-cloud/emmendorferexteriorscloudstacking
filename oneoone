@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emmendorfer Exteriors | Premier Roofing & Siding in Union, MO</title>
+    <meta name="description" content="Emmendorfer Exteriors provides top-tier roofing, siding, and storm restoration services in Union, MO. Certified experts dedicated to protecting your home.">
+    
+    <meta name="robots" content="index, follow">
+    <meta name="googlebot" content="index, follow">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        /* --- RESET & VARIABLES --- */
+        :root {
+            --color-primary: #0f172a; /* Slate 900 */
+            --color-secondary: #dc2626; /* Red 600 */
+            --color-secondary-hover: #b91c1c;
+            --color-text: #334155;
+            --color-light: #f1f5f9;
+            --color-white: #ffffff;
+            --font-main: 'Inter', sans-serif;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        html { scroll-behavior: smooth; }
+        
+        body {
+            font-family: var(--font-main);
+            color: var(--color-text);
+            line-height: 1.6;
+            background-color: var(--color-white);
+        }
+
+        a { text-decoration: none; color: inherit; }
+        ul { list-style: none; }
+
+        /* --- UTILITIES --- */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        .flex { display: flex; align-items: center; }
+        .justify-between { justify-content: space-between; }
+        .justify-center { justify-content: center; }
+        .grid { display: grid; gap: 2rem; }
+        .grid-3 { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
+        
+        .text-center { text-align: center; }
+        .hidden-mobile { display: none; }
+        @media (min-width: 768px) { .hidden-mobile { display: block; } }
+        
+        .btn {
+            display: inline-block;
+            padding: 0.85rem 1.75rem;
+            border-radius: 0.375rem;
+            font-weight: 700;
+            transition: all 0.2s;
+            cursor: pointer;
+            border: 2px solid transparent;
+            text-transform: uppercase;
+            font-size: 0.875rem;
+            letter-spacing: 0.05em;
+        }
+
+        .btn-primary {
+            background-color: var(--color-secondary);
+            color: white;
+            box-shadow: 0 4px 6px -1px rgba(220, 38, 38, 0.3);
+        }
+        .btn-primary:hover { background-color: var(--color-secondary-hover); transform: translateY(-2px); box-shadow: 0 10px 15px -3px rgba(220, 38, 38, 0.4); }
+
+        .btn-outline {
+            background-color: transparent;
+            border-color: white;
+            color: white;
+        }
+        .btn-outline:hover { background-color: white; color: var(--color-primary); }
+
+        /* --- HEADER --- */
+        .top-bar {
+            background-color: var(--color-primary);
+            color: #94a3b8;
+            padding: 0.5rem 0;
+            font-size: 0.875rem;
+            border-bottom: 1px solid #1e293b;
+        }
+
+        header {
+            position: sticky;
+            top: 0;
+            background: white;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+            z-index: 100;
+            padding: 1rem 0;
+        }
+
+        .logo-text { line-height: 1; display: flex; flex-direction: column; }
+        .logo-main { font-size: 1.5rem; font-weight: 800; color: var(--color-primary); text-transform: uppercase; letter-spacing: -0.025em; }
+        .logo-sub { font-size: 0.875rem; font-weight: 700; color: var(--color-secondary); text-transform: uppercase; letter-spacing: 0.2em; }
+
+        .nav-links { display: none; gap: 2rem; font-weight: 600; font-size: 0.95rem; }
+        .nav-links a:hover { color: var(--color-secondary); }
+        @media (min-width: 1024px) { .nav-links { display: flex; } }
+
+        .mobile-menu-btn { font-size: 1.5rem; color: var(--color-primary); background: none; border: none; display: block; cursor: pointer; }
+        @media (min-width: 1024px) { .mobile-menu-btn { display: none; } }
+
+        /* --- HERO --- */
+        .hero {
+            background: linear-gradient(135deg, #0f172a 0%, #334155 100%);
+            color: white;
+            padding: 8rem 0 10rem 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background-image: radial-gradient(#ffffff 1px, transparent 1px);
+            background-size: 40px 40px;
+            opacity: 0.03;
+        }
+
+        .tag {
+            background-color: rgba(220, 38, 38, 0.15);
+            color: #fca5a5;
+            border: 1px solid rgba(220, 38, 38, 0.3);
+            font-size: 0.75rem;
+            font-weight: 700;
+            padding: 0.35rem 1rem;
+            border-radius: 9999px;
+            text-transform: uppercase;
+            display: inline-block;
+            margin-bottom: 1.5rem;
+            letter-spacing: 0.05em;
+        }
+
+        .hero h1 { font-size: 2.5rem; font-weight: 800; margin-bottom: 1.5rem; line-height: 1.1; letter-spacing: -0.025em; }
+        @media (min-width: 768px) { .hero h1 { font-size: 4rem; } }
+        
+        .hero p { font-size: 1.125rem; color: #cbd5e1; max-width: 650px; margin: 0 auto 2.5rem auto; font-weight: 300; }
+
+        .hero-btns { display: flex; flex-direction: column; gap: 1rem; align-items: center; }
+        @media (min-width: 640px) { .hero-btns { flex-direction: row; justify-content: center; } }
+
+        /* --- CARDS & SECTIONS --- */
+        .section-padding { padding: 6rem 0; }
+        .bg-gray { background-color: var(--color-light); }
+        
+        .card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 1rem;
+            box-shadow: 0 10px 15px -3px rgba(0,0,0,0.05);
+            border-bottom: 5px solid var(--color-secondary);
+            text-align: center;
+            transition: all 0.3s ease;
+            position: relative;
+            z-index: 10;
+        }
+        .card:hover { transform: translateY(-7px); box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1); }
+
+        .icon-circle {
+            width: 4.5rem; height: 4.5rem;
+            background-color: #eff6ff;
+            color: var(--color-primary);
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            margin: 0 auto 1.5rem auto;
+            font-size: 1.75rem;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .card:hover .icon-circle { background-color: var(--color-secondary); color: white; }
+
+        .card h3 { margin-bottom: 0.75rem; color: var(--color-primary); font-size: 1.25rem; }
+        .card p { font-size: 0.95rem; color: #64748b; }
+
+        /* --- DARK SECTION (Risks) --- */
+        .dark-section { background-color: #1e293b; color: white; position: relative; overflow: hidden; }
+        .warning-list { margin-top: 2rem; }
+        .warning-list li { display: flex; gap: 1rem; margin-bottom: 1.25rem; align-items: flex-start; color: #e2e8f0; }
+        .warning-icon { color: #fbbf24; font-size: 1.25rem; margin-top: 2px; }
+
+        .stat-card {
+            background-color: rgba(255,255,255,0.05);
+            backdrop-filter: blur(10px);
+            border-radius: 1.5rem;
+            padding: 3rem 2rem;
+            border: 1px solid rgba(255,255,255,0.1);
+            text-align: center;
+        }
+
+        /* --- FAQ --- */
+        .faq-item {
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 0.75rem;
+            margin-bottom: 1rem;
+            overflow: hidden;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+        .faq-btn {
+            width: 100%;
+            padding: 1.25rem 1.5rem;
+            text-align: left;
+            background: none;
+            border: none;
+            font-weight: 700;
+            color: var(--color-primary);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            font-size: 1.05rem;
+            transition: background-color 0.2s;
+        }
+        .faq-btn:hover { background-color: #f8fafc; }
+        .faq-content {
+            max-height: 0;
+            opacity: 0;
+            padding: 0 1.5rem;
+            transition: all 0.3s ease-out;
+            color: #475569;
+            line-height: 1.7;
+        }
+        .faq-content.active { max-height: 300px; opacity: 1; padding-bottom: 1.5rem; border-top: 1px solid #f1f5f9; }
+        .rotate { transform: rotate(180deg); transition: transform 0.3s; color: var(--color-secondary); }
+
+        /* --- WEB PROFILES GRID --- */
+        .profiles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+            gap: 1rem;
+            margin-top: 2.5rem;
+        }
+        .profile-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: white;
+            border: 1px solid #e2e8f0;
+            padding: 0.85rem;
+            border-radius: 0.5rem;
+            text-align: center;
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: #64748b;
+            transition: all 0.2s;
+            text-decoration: none;
+        }
+        .profile-link:hover {
+            border-color: var(--color-secondary);
+            color: var(--color-secondary);
+            transform: translateY(-3px);
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+        }
+
+        /* --- FOOTER --- */
+        footer { background-color: #020617; color: #94a3b8; padding: 5rem 0 2rem 0; font-size: 0.9rem; border-top: 1px solid #1e293b; }
+        footer h4 { color: white; margin-bottom: 1.25rem; font-size: 1.1rem; font-weight: 700; }
+        footer ul li { margin-bottom: 0.75rem; }
+        footer a { transition: color 0.2s; }
+        footer a:hover { color: var(--color-secondary); }
+
+        /* --- MOBILE MENU --- */
+        #mobile-menu { display: none; background: #fff; border-top: 1px solid #e2e8f0; padding: 1rem; position: absolute; width: 100%; left: 0; top: 100%; box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1); }
+        #mobile-menu.active { display: block; }
+        #mobile-menu a { display: block; padding: 0.75rem 0; font-weight: 600; color: var(--color-primary); border-bottom: 1px solid #f1f5f9; }
+        
+        /* Service Cards specific */
+        .service-img-placeholder {
+            height: 13rem;
+            background-color: #f8fafc;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 3.5rem; color: #cbd5e1;
+            transition: color 0.3s;
+        }
+        .card:hover .service-img-placeholder { color: var(--color-secondary); }
+    </style>
+</head>
+<body>
+
+    <div class="top-bar">
+        <div class="container flex justify-between">
+            <div class="flex hidden-mobile" style="gap: 1.5rem;">
+                <span><i class="fas fa-map-marker-alt" style="color: var(--color-secondary); margin-right: 6px;"></i> Serving Union, MO & Beyond</span>
+                <span><i class="fas fa-clock" style="color: var(--color-secondary); margin-right: 6px;"></i> Mon-Fri: 8am - 5pm</span>
+            </div>
+            <div class="flex" style="gap: 1.25rem; margin-left: auto;">
+                <span class="hidden-mobile">Follow Us:</span>
+                <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <header>
+        <div class="container flex justify-between">
+            <a href="/" class="logo-text">
+                <span class="logo-main">Emmendorfer</span>
+                <span class="logo-sub">Exteriors</span>
+            </a>
+
+            <nav class="nav-links">
+                <a href="#services">Our Services</a>
+                <a href="#process">How We Work</a>
+                <a href="#why-us">The Difference</a>
+                <a href="#faq">FAQ</a>
+            </nav>
+
+            <div class="hidden-mobile">
+                <a href="https://emmendorferexteriors.com/contact/" class="btn btn-primary">Book Consultation</a>
+            </div>
+
+            <button id="mobile-menu-btn" class="mobile-menu-btn" aria-label="Menu"><i class="fas fa-bars"></i></button>
+        </div>
+        <div id="mobile-menu">
+            <a href="#services">Our Services</a>
+            <a href="#process">How We Work</a>
+            <a href="#why-us">The Difference</a>
+            <a href="https://emmendorferexteriors.com/contact/" style="color: var(--color-secondary);">Book Consultation</a>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <span class="tag">Trusted Storm Restoration Experts</span>
+            <h1>Don't Let Storm Damage<br>Compromise Your Home.</h1>
+            <p>Your premier choice for roofing, siding, and gutter solutions in Union, Missouri. We restore peace of mind with quality craftsmanship, durable materials, and rapid response times.</p>
+            <div class="hero-btns">
+                <a href="https://emmendorferexteriors.com/contact/" class="btn btn-primary">Schedule Free Inspection</a>
+                <a href="tel:5551234567" class="btn btn-outline"><i class="fas fa-phone-alt" style="margin-right: 0.5rem;"></i> (555) 123-4567</a>
+            </div>
+        </div>
+    </section>
+
+    <section style="padding: 0 0 4rem 0; margin-top: -4rem;">
+        <div class="container">
+            <div class="grid grid-3">
+                <div class="card">
+                    <div class="icon-circle"><i class="fas fa-shield-alt"></i></div>
+                    <h3>Full-Envelope Security</h3>
+                    <p>We don't just patch holes; we ensure your entire exterior system—roof, siding, and gutters—works in harmony.</p>
+                </div>
+                <div class="card">
+                    <div class="icon-circle"><i class="fas fa-chart-line"></i></div>
+                    <h3>Return on Investment</h3>
+                    <p>Modernize your curb appeal with high-grade materials that boost your property value and lifespan.</p>
+                </div>
+                <div class="card">
+                    <div class="icon-circle"><i class="fas fa-leaf"></i></div>
+                    <h3>Eco-Friendly Efficiency</h3>
+                    <p>Reduce your carbon footprint and utility bills with advanced insulation and ventilation technology.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding dark-section">
+        <div class="container grid grid-3" style="grid-template-columns: 1fr 1fr; align-items: center;">
+            <div>
+                <h2 style="font-size: 2.5rem; margin-bottom: 1.5rem; line-height: 1.2;">The High Cost of <span style="color: var(--color-secondary);">Cutting Corners</span></h2>
+                <p style="color: #cbd5e1; margin-bottom: 2rem;">Your home is your biggest asset. Trusting unverified contractors can turn a small repair into a financial nightmare.</p>
+                <ul class="warning-list">
+                    <li><i class="fas fa-exclamation-triangle warning-icon"></i> <span>Recurring leaks causing structural rot</span></li>
+                    <li><i class="fas fa-exclamation-triangle warning-icon"></i> <span>Mold infestations threatening family health</span></li>
+                    <li><i class="fas fa-exclamation-triangle warning-icon"></i> <span>Warranties voided by improper installation</span></li>
+                    <li><i class="fas fa-exclamation-triangle warning-icon"></i> <span>Skyrocketing heating and cooling costs</span></li>
+                </ul>
+                <div style="margin-top: 2.5rem;">
+                    <a href="https://emmendorferexteriors.com/contact/" class="btn btn-primary">Secure Your Investment</a>
+                </div>
+            </div>
+            <div style="display: flex; justify-content: center;">
+                <div class="stat-card">
+                    <i class="fas fa-house-user" style="font-size: 4rem; color: var(--color-secondary); margin-bottom: 1.5rem;"></i>
+                    <h3 style="font-size: 1.75rem; margin-bottom: 0.5rem;">The Emmendorfer Promise</h3>
+                    <p style="color: #94a3b8; margin-bottom: 2rem;">Certified. Insured. Local.</p>
+                    <div style="background: rgba(0,0,0,0.3); padding: 1.25rem; border-radius: 0.75rem; display: flex; align-items: center; gap: 1rem; justify-content: center;">
+                        <div class="text-center">
+                            <div style="font-size: 0.75rem; text-transform: uppercase; color: #94a3b8; letter-spacing: 1px;">Satisfaction</div>
+                            <div style="font-weight: 800; color: white;">100% Guaranteed</div>
+                        </div>
+                        <i class="fas fa-check-circle" style="color: #22c55e; font-size: 2rem;"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="section-padding bg-gray">
+        <div class="container">
+            <div class="text-center" style="margin-bottom: 4rem;">
+                <h2 style="font-size: 2.25rem; color: var(--color-primary); margin-bottom: 1rem;">Expert Exterior Solutions</h2>
+                <p style="max-width: 650px; margin: 0 auto; color: #64748b;">We specialize in comprehensive exterior renovations, handling everything from minor repairs to full-scale replacements.</p>
+            </div>
+            <div class="grid grid-3">
+                <div class="card" style="padding: 0; text-align: left; overflow: hidden; border-bottom: none;">
+                    <div class="service-img-placeholder"><i class="fas fa-hammer"></i></div>
+                    <div style="padding: 2rem;">
+                        <h3 style="margin-bottom: 0.5rem;">Roofing Systems</h3>
+                        <p>From asphalt shingles to flat roofing, we deliver watertight installations built to withstand Missouri weather.</p>
+                    </div>
+                </div>
+                <div class="card" style="padding: 0; text-align: left; overflow: hidden; border-bottom: none;">
+                    <div class="service-img-placeholder"><i class="fas fa-layer-group"></i></div>
+                    <div style="padding: 2rem;">
+                        <h3 style="margin-bottom: 0.5rem;">Siding & Trim</h3>
+                        <p>Transform your home's appearance while fortifying it against wind, hail, and moisture intrusion.</p>
+                    </div>
+                </div>
+                <div class="card" style="padding: 0; text-align: left; overflow: hidden; border-bottom: none;">
+                    <div class="service-img-placeholder"><i class="fas fa-water"></i></div>
+                    <div style="padding: 2rem;">
+                        <h3 style="margin-bottom: 0.5rem;">Gutter Management</h3>
+                        <p>Protect your foundation with seamless gutter systems designed for optimal water diversion.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="faq" class="section-padding">
+        <div class="container" style="max-width: 800px;">
+            <div class="text-center" style="margin-bottom: 3.5rem;">
+                <h2 style="font-size: 2.25rem; color: var(--color-primary);">Common Questions</h2>
+                <p style="color: #64748b; margin-top: 0.5rem;">Get answers to your most pressing roofing concerns.</p>
+            </div>
+            
+            <div class="faq-item">
+                <button class="faq-btn">
+                    What kind of warranties do you provide?
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="faq-content">
+                    <p>We believe in our work. That's why we back every project with industry-leading manufacturer warranties on materials, combined with our own solid workmanship guarantee. You are covered on all fronts.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-btn">
+                    Is emergency storm repair available?
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="faq-content">
+                    <p>Yes. Storms don't keep office hours, and neither do we when disaster strikes. Our emergency response team is on standby to tarp and secure your roof immediately to prevent further interior damage.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-btn">
+                    Do you work directly with homeowners?
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="faq-content">
+                    <p>Absolutely. While we are specialists in navigating insurance claims, we also offer competitive pricing for retail projects, upgrades, and maintenance for homeowners not using insurance.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-btn">
+                    Which areas does Emmendorfer Exteriors serve?
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="faq-content">
+                    <p>We are proudly headquartered in Union, MO, and extend our services to the surrounding counties. If you aren't sure if you're in our service zone, just give us a call!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding bg-gray">
+        <div class="container">
+            <div class="text-center" style="margin-bottom: 2.5rem;">
+                <h2 style="font-size: 2rem; color: var(--color-primary);">Connect With Our Network</h2>
+                <p style="color: #64748b;">Find us on your favorite platforms and business directories.</p>
+            </div>
+            <div class="profiles-grid">
+                <a href="https://emmendorferexteriors.arif-17e.workers.dev/" target="_blank" class="profile-link" style="border-color: var(--color-secondary); color: var(--color-secondary); font-weight: 700;">Workers Site</a>
+                
+                <a href="https://www.brownbook.net/business/53064192/emmendorferexteriors/" target="_blank" class="profile-link">Brownbook</a>
+                <a href="https://www.bizcommunity.com/Company/EmmendorferExteriors" target="_blank" class="profile-link">Bizcommunity</a>
+                <a href="https://us.enrollbusiness.com/BusinessProfile/6861179/Emmendorfer%20Exteriors" target="_blank" class="profile-link">EnrollBusiness</a>
+                <a href="https://seller.trepup.com/admin/F737CA524CFC2528408/home" target="_blank" class="profile-link">Trepup</a>
+                <a href="https://justpaste.it/69nue" target="_blank" class="profile-link">JustPaste</a>
+                <a href="https://bizidex.com/en/emmendorfer-exteriors-construction-594519" target="_blank" class="profile-link">Bizidex</a>
+                <a href="https://yellow.place/en/emmendorfer-exteriors-union-city-mi-usa" target="_blank" class="profile-link">Yellow Place</a>
+                <a href="https://hometownandcity.com/profile/emmendorfer-exteriors-58576/" target="_blank" class="profile-link">HometownAndCity</a>
+                <a href="https://mo-state.cataloxy.us/firms/mo-union/emmendorferexteriors.com.htm" target="_blank" class="profile-link">Cataloxy</a>
+                <a href="https://penzu.com/p/7ef8ec5ce4d8c4d2" target="_blank" class="profile-link">Penzu</a>
+                <a href="https://www.postkarlo.com/protect-your-home-with-emmendorfer-exteriors/" target="_blank" class="profile-link">PostKarlo</a>
+                <a href="https://www.demobootstrap.com/united-states/union/professional-services-1/emmendorfer-exteriors" target="_blank" class="profile-link">DemoBootstrap</a>
+                <a href="https://www.techdirectory.io/union/professional-services/emmendorfer-exteriors" target="_blank" class="profile-link">TechDirectory</a>
+                <a href="https://www.preferredprofessionals.com/union/professional-services/emmendorfer-exteriors" target="_blank" class="profile-link">PreferredProfessionals</a>
+                <a href="https://localac.net/account/listing_view?id=6062418&redirect=L2FjY291bnQvbGlzdGluZ3M=" target="_blank" class="profile-link">LocalAC</a>
+                <a href="https://locallawnmaintenance.com/account/listing_view?id=6062419&redirect=L2FjY291bnQvbGlzdGluZ3M=" target="_blank" class="profile-link">LocalLawnMaintenance</a>
+                <a href="https://reviewsonmywebsite.com/app/businesses" target="_blank" class="profile-link">ReviewsOnMyWebsite</a>
+                <a href="https://localpages.com/business-listing" target="_blank" class="profile-link">LocalPages</a>
+                <a href="https://globalcatalog.com/emmendorferexteriors.us" target="_blank" class="profile-link">GlobalCatalog</a>
+                <a href="https://www.atlasobscura.com/users/emmendorfer-exteriors" target="_blank" class="profile-link">Atlas Obscura</a>
+                <a href="https://gravatar.com/gleaming4716823adc" target="_blank" class="profile-link">Gravatar</a>
+                <a href="https://www.intensedebate.com/people/emmendorfer12" target="_blank" class="profile-link">IntenseDebate</a>
+                <a href="https://ko-fi.com/emmendorferexteriors" target="_blank" class="profile-link">Ko-fi</a>
+                <a href="https://www.sokule.com/postit/Emmendorferexteriors?pg=about" target="_blank" class="profile-link">Sokule</a>
+                <a href="https://slides.com/emmendorferexteriors" target="_blank" class="profile-link">Slides</a>
+                <a href="https://seedandspark.com/user/creator-goal-01j82syccysba55pxbba7fp7jq" target="_blank" class="profile-link">Seed&Spark</a>
+                <a href="https://coub.com/307d83adf6c39230b4d5" target="_blank" class="profile-link">Coub</a>
+                <a href="https://triberr.com/Emmendorferexteriors" target="_blank" class="profile-link">Triberr</a>
+                <a href="https://myspace.com/emmendorferexteriors" target="_blank" class="profile-link">MySpace</a>
+                <a href="https://www.longisland.com/profile/Emmendorferexteriors" target="_blank" class="profile-link">LongIsland</a>
+                <a href="https://www.openlearning.com/u/emmendorferexteriors-sk0kyc/" target="_blank" class="profile-link">OpenLearning</a>
+                <a href="https://www.domestika.org/en/emmendorfer11" target="_blank" class="profile-link">Domestika</a>
+                <a href="https://recordsetter.com/user/edit" target="_blank" class="profile-link">RecordSetter</a>
+                <a href="https://www.pinterest.com/Emmendorferexteriors/" target="_blank" class="profile-link">Pinterest</a>
+                <a href="https://medium.com/@goalcreator11/about" target="_blank" class="profile-link">Medium</a>
+                <a href="https://www.quora.com/profile/Goal-Creator-7" target="_blank" class="profile-link">Quora</a>
+                <a href="https://linktr.ee/Emmendorferexteriors" target="_blank" class="profile-link">Linktree</a>
+                <a href="https://www.behance.net/emmendoexterio" target="_blank" class="profile-link">Behance</a>
+                <a href="https://dofollowsubmit.com/page/business-services/emmendorfer-exteriors" target="_blank" class="profile-link">DoFollowSubmit</a>
+                <a href="https://backlinkbookmark.com/page/business-services/emmendorfer-exteriors" target="_blank" class="profile-link">BacklinkBookmark</a>
+                <a href="https://bestbookmarkingsites.com/page/business-services/emmendorfer-exteriors" target="_blank" class="profile-link">BestBookmarkingSites</a>
+                <a href="https://clicksubmission.com/page/business-services/emmendorfer-exteriors" target="_blank" class="profile-link">ClickSubmission</a>
+                <a href="https://dofollowseo.com/page/business-services/emmendorfer-exteriors" target="_blank" class="profile-link">DoFollowSEO</a>
+                <a href="https://submityourstories.net/page/business-services/emmendorfer-exteriors" target="_blank" class="profile-link">SubmitYourStories</a>
+                <a href="https://freelinkssubmission.com/page/business-services/emmendorfer-exteriors" target="_blank" class="profile-link">FreeLinksSubmission</a>
+                <a href="https://freesbm.com/page/business-services/emmendorfer-exteriors" target="_blank" class="profile-link">FreeSBM</a>
+                <a href="https://freesbmbookmark.com/page/business-services/emmendorfer-exteriors" target="_blank" class="profile-link">FreeSBMBookmark</a>
+                <a href="https://linkproviders.com/page/business-services/emmendorfer-exteriors" target="_blank" class="profile-link">LinkProviders</a>
+                <a href="https://sbmbookmark.com/page/business-services/emmendorfer-exteriors" target="_blank" class="profile-link">SBMBookmark</a>
+                <a href="https://sbmbookmarks.com/page/business-services/emmendorfer-exteriors" target="_blank" class="profile-link">SBMBookmarks</a>
+                <a href="https://sbmguestlink.com/page/business-services/emmendorfer-exteriors" target="_blank" class="profile-link">SBMGuestLink</a>
+                <a href="https://sbmkings.com/page/business-services/emmendorfer-exteriors" target="_blank" class="profile-link">SBMKings</a>
+                <a href="https://socialbookmarkpro.com/page/business-services/emmendorfer-exteriors" target="_blank" class="profile-link">SocialBookmarkPro</a>
+                <a href="https://socialbookmarkhub.com/page/business-services/emmendorfer-exteriors" target="_blank" class="profile-link">SocialBookmarkHub</a>
+                <a href="https://socialbookmarkmedia.com/page/business-services/emmendorfer-exteriors" target="_blank" class="profile-link">SocialBookmarkMedia</a>
+                <a href="https://socialbookmarkonline.com/page/business-services/emmendorfer-exteriors" target="_blank" class="profile-link">SocialBookmarkOnline</a>
+                <a href="https://sbmbacklinks.com/page/business-services/emmendorfer-exteriors" target="_blank" class="profile-link">SBMBacklinks</a>
+                <a href="https://socialbookads.com/page/business-services/emmendorfer-exteriors" target="_blank" class="profile-link">SocialBookAds</a>
+                <a href="https://www.whatsyourhours.com/united-states/union/building-renovation/emmendorfer-exteriors" target="_blank" class="profile-link">WhatsYourHours</a>
+                <a href="https://www.youbiz.com/listing/emmendorfer-exteriors.html" target="_blank" class="profile-link">YouBiz</a>
+                <a href="https://www.crunchbase.com/organization/emmendorfer-exteriors" target="_blank" class="profile-link">Crunchbase</a>
+                <a href="https://www.provenexpert.com/emmendorfer-exteriors/?mode=preview" target="_blank" class="profile-link">ProvenExpert</a>
+                <a href="https://clutch.co/profile/emmendorfer-exteriors" target="_blank" class="profile-link">Clutch</a>
+                <a href="https://www.bizmakersamerica.org/union/business-services/emmendorfer-exteriors" target="_blank" class="profile-link">BizMakersAmerica</a>
+                <a href="https://startups.snapmunk.com/union/environmental-services/emmendorfer-exteriors" target="_blank" class="profile-link">SnapMunk</a>
+                <a href="https://www.goodfirms.co/company/emmendorfer-exteriors" target="_blank" class="profile-link">GoodFirms</a>
+                <a href="https://www.wireanium.com/union/building-contractors/emmendorfer-exteriors" target="_blank" class="profile-link">Wireanium</a>
+                <a href="https://www.cleansway.com/union/business/emmendorfer-exteriors" target="_blank" class="profile-link">Cleansway</a>
+                <a href="https://independent.academia.edu/GoalCreator6" target="_blank" class="profile-link">Academia.edu</a>
+                <a href="https://issuu.com/emmendorferexteriors" target="_blank" class="profile-link">Issuu</a>
+                <a href="https://www.finduslocal.com/local-business/missouri/union/emmendorfer-exteriors_388-cedar-terrace-dr-union-mo-63084/" target="_blank" class="profile-link">FindUsLocal</a>
+                <a href="https://www.ecitybiz.com/listing/emmendorfer-exteriors.html" target="_blank" class="profile-link">eCityBiz</a>
+                <a href="https://emmendorfer-exteriors.jimdosite.com/" target="_blank" class="profile-link">Jimdosite</a>
+                <a href="https://www.last.fm/user/Emmendorfer123" target="_blank" class="profile-link">Last.fm</a>
+                <a href="https://www.redbubble.com/people/Emmendorfer123/shop" target="_blank" class="profile-link">Redbubble</a>
+                <a href="https://gleaming4716823adc.wordpress.com/2024/09/26/welcome-to-emmendorfer-exteriors/" target="_blank" class="profile-link">WordPress</a>
+                <a href="https://www.deviantart.com/emmendorferexteriors" target="_blank" class="profile-link">DeviantArt</a>
+                <a href="https://emmendorferexteriors.weebly.com/" target="_blank" class="profile-link">Weebly</a>
+                <a href="https://goalcreator11.wixsite.com/emmendorfer-exterior" target="_blank" class="profile-link">Wix</a>
+                <a href="https://sites.google.com/view/emmendorferexteriors/home" target="_blank" class="profile-link">Google Sites</a>
+                <a href="https://www.goodreads.com/user/show/182316126-emmendorfer-exteriors" target="_blank" class="profile-link">Goodreads</a>
+                <a href="https://emmendorferexteriors0.godaddysites.com/" target="_blank" class="profile-link">GoDaddy Sites</a>
+                <a href="https://www.bloglovin.com/@emmendorferexteriors/4-common-gutter-problems-how-to-fix-them" target="_blank" class="profile-link">Bloglovin</a>
+                <a href="https://codepen.io/Goal-Creator-the-decoder/pen/OJKVPob" target="_blank" class="profile-link">CodePen</a>
+                <a href="https://emmendorferexteriors.zohosites.com/" target="_blank" class="profile-link">Zoho Sites</a>
+                <a href="https://temperate-cat-m34s4t.mystrikingly.com/" target="_blank" class="profile-link">Strikingly</a>
+                <a href="https://bit.ly/m/Emmendorferexteriors" target="_blank" class="profile-link">Bitly</a>
+                <a href="https://emmendorferexteriors.qowap.com/" target="_blank" class="profile-link">Qowap</a>
+                <a href="https://emmendorferexteriors.webflow.io/" target="_blank" class="profile-link">Webflow</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container grid grid-3" style="grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));">
+            <div>
+                <div class="logo-text" style="margin-bottom: 1.25rem;">
+                    <span class="logo-main" style="color: white;">Emmendorfer</span>
+                    <span class="logo-sub">Exteriors</span>
+                </div>
+                <p>Providing exceptional roofing and exterior services to Union, MO and the surrounding areas since 2024.</p>
+            </div>
+            <div>
+                <h4>Expertise</h4>
+                <ul>
+                    <li><a href="#">Residential Roofing</a></li>
+                    <li><a href="#">Commercial Roofing</a></li>
+                    <li><a href="#">Storm Damage Repair</a></li>
+                    <li><a href="#">Siding Installation</a></li>
+                    <li><a href="#">Gutter Systems</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Contact Us</h4>
+                <ul>
+                    <li><i class="fas fa-map-marker-alt" style="margin-right: 8px;"></i> Union, MO 63084</li>
+                    <li><i class="fas fa-phone" style="margin-right: 8px;"></i> (555) 123-4567</li>
+                    <li><i class="fas fa-envelope" style="margin-right: 8px;"></i> info@emmendorferexteriors.com</li>
+                </ul>
+            </div>
+        </div>
+        <div class="container text-center" style="margin-top: 4rem; padding-top: 2rem; border-top: 1px solid #1e293b; color: #64748b; font-size: 0.85rem;">
+            &copy; 2024 Emmendorfer Exteriors. All Rights Reserved.
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('active');
+        });
+
+        // FAQ Animation
+        const btns = document.querySelectorAll('.faq-btn');
+        btns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const content = btn.nextElementSibling;
+                const icon = btn.querySelector('i');
+                const isActive = content.classList.contains('active');
+                
+                // Optional: Close others
+                // document.querySelectorAll('.faq-content').forEach(c => c.classList.remove('active'));
+                // document.querySelectorAll('.rotate').forEach(i => i.classList.remove('rotate'));
+
+                if(isActive) {
+                    content.classList.remove('active');
+                    icon.classList.remove('rotate');
+                } else {
+                    content.classList.add('active');
+                    icon.classList.add('rotate');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
